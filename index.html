@@ -1,73 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Télécharger Vidéo Facebook HD</title>
-<style>
-  body {font-family: Arial; background:#f2f2f2; text-align:center; padding:20px; margin:0;}
-  .box {background:white; padding:20px; border-radius:10px; max-width:500px; margin:auto; box-shadow:0 2px 10px #ccc;}
-  input {width:90%; padding:12px; border:1px solid #ccc; border-radius:5px; margin:10px 0;}
-  button {background:#1877f2; color:white; border:none; padding:14px 20px; border-radius:5px; cursor:pointer; font-size:16px; width:90%; font-weight:bold;}
-  button:hover {background:#0d65d9;}
-  button:disabled {background:#ccc;}
-  .pub {background:#ffeeba; padding:10px; margin:15px 0; border-radius:5px; font-size:14px; min-height:90px;}
-  #result {margin-top:15px; font-size:14px;}
-  .warning {font-size:11px; color:#888; margin-top:10px;}
-</style>
-  <meta name="monetag" content="81573de6daac3507b263b2d6fa9018d8">
-</head>
 <body>
-<div class="box">
-  <h2>📥 Téléchargeur Facebook</h2>
-  
-  <!-- PUB 1 : HAUT DE PAGE - Colle code AdSense ici -->
-  <div class="pub">VOTRE PUB ICI</div>
-  
-  <input type="text" id="url" placeholder="Collez le lien Facebook ici">
-  <p class="warning">Une courte pub va s'ouvrir avant le téléchargement</p>
-  <button id="btn" onclick="downloadVideo()">Obtenir le lien de téléchargement</button>
-  
-  <div id="result"></div>
-  
-  <!-- PUB 2 : MILIEU DE PAGE - Colle code AdSense ici -->
-  <div class="pub">VOTRE PUB ICI</div>
-  
-  <!-- PUB 3 : BAS DE PAGE - Colle code AdSense ici -->
-  <div class="pub">VOTRE PUB ICI</div>
-  
-  <p class="warning">Ce site n'est pas affilié à Facebook. Utilisez pour du contenu libre de droit uniquement.</p>
-</div>
 
-<script>
-function downloadVideo() {
-  let url = document.getElementById("url").value;
-  let btn = document.getElementById("btn");
-  let result = document.getElementById("result");
-  
-  if(!url.includes("facebook.com")) {
-    result.innerHTML = "<p style='color:red'>Colle un vrai lien Facebook</p>";
-    return;
-  }
-  
-  btn.disabled = true;
-  btn.innerText = "Chargement...";
-  result.innerHTML = "<p>⏳ Ouverture de la pub...</p>";
-  
-  // ÉTAPE 1 : OUVRIR LA PUB VIDÉO POPUNDER
-  // Remplace ce lien par ton lien PropellerAds / Adsterra
-  window.open("https://www.profitableratecpm.com/TON-LIEN-POPUNDER", "_blank");
-  
-  // ÉTAPE 2 : 3 secondes après on ouvre Cobalt
-  setTimeout(function() {
-    let cobaltLink = "https://cobalt.tools/?url=" + encodeURIComponent(url);
-    window.open(cobaltLink, "_blank");
-    result.innerHTML = "<p style='color:green'>✅ C'est bon ! Télécharge sur Cobalt</p>";
-    btn.disabled = false;
-    btn.innerText = "Obtenir le lien de téléchargement";
-  }, 3000);
-}
-</script>
+  <!-- 1. HERO - En haut de page -->
+  <div class="hero">
+    <h1>Facebook Video Downloader</h1>
+    <p>Télécharge n'importe quelle vidéo Facebook en MP4 HD gratuitement</p>
+    <input type="text" placeholder="Colle le lien de la vidéo ici">
+    <button>Télécharger</button>
+  </div>
+
+  <!-- 2. COMMENT ÇA MARCHE -->
+  <div class="how-it-works">
+    <h2>Comment télécharger ?</h2>
+    <p>1. Copiez le lien de la vidéo Facebook</p>
+    <p>2. Collez-le ici</p>
+    <p>3. Cliquez sur Télécharger</p>
+  </div>
+
+  <!-- 3. FOOTER - Tout en bas -->
+  <footer>
+    <p>© 2026 FB Downloader | Politique de confidentialité | Contact</p>
+  </footer>
+  <script src="code-monetag-ici"></script>
 </body>
-    </html>
-    
