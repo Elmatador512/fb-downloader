@@ -47,6 +47,23 @@
   </footer>
 <script src="https://pl30647807.effectivecpmnetwork.com/99/d4/d8/99d4d80f50cdc1d42f1d538feefeaa71.js"></script>
   <script src="https://pl30647807.effectivecpmnetwork.com/99/d4/d8/99d4d80f50cdc1d42f1d538feefeaa71.js"></script>
+  <script>
+function downloadVideo() {
+  let url = document.getElementById("url").value;
   
+  if(!url.includes("facebook.com")) {
+    alert("Colle un vrai lien Facebook");
+    return;
+  }
+
+  // 1. Ouvre la pub Adsterra
+  window.open("https://pl30647807.effectivecpmnetwork.com/99/d4/d8/99d4d80f50cdc1d42f1d538feefeaa71.js", "_blank");
+  
+  // 2. Ouvre cobalt pour télécharger après 1 seconde
+  setTimeout(function(){
+    window.open("https://cobalt.tools/?url=" + encodeURIComponent(url), "_blank");
+  }, 1000);
+}
+    </script>
 </body>
 </html>
