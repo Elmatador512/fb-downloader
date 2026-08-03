@@ -1,0 +1,259 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#667eea,#764ba2);
+
+    padding:20px;
+
+}
+
+
+.container{
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    margin-top:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+
+
+h1{
+
+    color:#1877f2;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+    color:#555;
+
+    margin-bottom:25px;
+
+}
+
+
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:2px solid #ddd;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+input:focus{
+
+    border-color:#1877f2;
+
+}
+
+
+
+button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    background:#1877f2;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    background:#0d65d9;
+
+}
+
+
+
+button:disabled{
+
+    background:#999;
+
+}
+
+
+
+#loader{
+
+    display:none;
+
+    margin-top:20px;
+
+    color:#1877f2;
+
+    font-weight:bold;
+
+}
+
+
+
+#result{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+}
+
+
+
+.ad-container{
+
+    background:white;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+
+
+.info{
+
+    background:white;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+
+
+.info h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+.info p{
+
+    margin:10px 0;
+
+}
+
+
+
+footer{
+
+    text-align:center;
+
+    color:white;
+
+    margin-top:30px;
+
+    font-size:14px;
+
+}
+
+
+
+footer a{
+
+    color:white;
+
+    margin:0 8px;
+
+    text-decoration:none;
+
+}
+
+
+
+footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:500px){
+
+    .card{
+
+        padding:20px;
+
+    }
+
+
+    h1{
+
+        font-size:25px;
+
+    }
+
+  }
