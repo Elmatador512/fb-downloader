@@ -107,7 +107,23 @@ footer{margin-top: 30px; font-size: 12px; color: white;}
                 });
                 const data = await response.json();
                 
-                
+                 let downloadUrl = null;
+
+ // Cas 1: URL directe
+ if(data.url) {
+ downloadUrl = data.url;
+ }
+ // Cas 2: Plusieurs qualités - on prend la meilleure
+ else if(data.picker && data.picker.length > 0) {
+ const best = data.picker.sort((a,b) => (b.quality || 0) - (a.quality || 0))[0];
+ downloadUrl = best.url;
+ }
+
+ if(downloadUrl) {
+ resultDiv.innerHTML = `<a href="${downloadUrl}" target="_blank" download style="color:#1877f2; font-weight:bold; font-size:16px;">✅ Clique ici pour télécharger la vidéo HD</a>`;
+ } else {
+ resultDiv.innerHTML = "❌ Lien invalide ou vidéo privée";
+ }
             } catch(e) {
                 resultDiv.innerHTML = "❌ Erreur. Réessaye";
             }
