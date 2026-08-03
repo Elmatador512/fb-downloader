@@ -1,89 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Video Downloader</title>
-    <style>
-        body{font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #f0f2f5;}
-        .hero{background: white; padding: 20px; border-radius: 12px; max-width: 500px; margin: auto;}
-        input{width:80%; padding:10px; margin:10px; border: 1px solid #ccc; border-radius: 8px;}
-        button{background: #1877f2; color: white; padding: 12px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;}
-        .btn-soutien{background: #FF7732; margin-top: 10px; display: block; width: 80%; margin: 10px auto;}
-        .how-it-works{text-align: left; margin-top: 20px;}
-        footer{margin-top: 20px; font-size: 12px; color: #888;}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Téléchargeur Facebook</title>
+<style>
+body{font-family:Arial;text-align:center;padding:20px;background:#f0f2f5;}
+.hero{background:white;padding:20px;border-radius:12px;max-width:500px;margin:auto;}
+input{width:80%;padding:10px;margin:10px;border:1px solid #ccc;border-radius:8px;}
+button{background:#1877f2;color:white;padding:12px 20px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;}
+.btn-soutien{background:#FF7732;margin-top:10px;display:block;width:80%;margin:10px auto;}
+footer{margin-top:20px;font-size:12px;color:#888;}
+</style>
 </head>
 <body>
 
-    <!-- 1. HERO -->
-    <div class="hero">
-        <h1>Facebook Downloader</h1>
-        <p>Télécharge n'importe quelle vidéo Facebook en MP4 HD gratuitement</p>
-        <input type="text" id="url" placeholder="Colle le lien Facebook ici" />
-        <button onclick="downloadVideo()">Télécharger</button>
+<div class="hero">
+<h1>Téléchargeur Facebook</h1>
+<p>Télécharge n'importe quelle vidéo Facebook en MP4 HD gratuitement</p>
+<input type="text" id="url" placeholder="Colle le lien Facebook ici" />
+<button onclick="telechargerVideo()">Télécharger</button>
+<button class="btn-soutien" onclick="ouvrirPub()">🔥 Regarder une vidéo pour me soutenir</button>
+<div id="resultat"></div>
+</div>
 
-        <!-- BOUTON SOUTIEN -->
-        <button class="btn-soutien" onclick="ouvrirPub()">🔥 Regarder une vidéo pour me soutenir</button>
-        <div id="result"></div>
-    </div>
+<div>
+<h2>Comment télécharger ?</h2>
+<p>1. Copiez le lien de la vidéo Facebook</p>
+<p>2. Collez-le ici</p>
+<p>3. Cliquez sur Télécharger</p>
+</div>
 
-    <!-- 2. COMMENT ÇA MARCHE -->
-    <div class="how-it-works">
-        <h2>Comment télécharger ?</h2>
-        <p>1. Copiez le lien de la vidéo Facebook</p>
-        <p>2. Collez-le ici</p>
-        <p>3. Cliquez sur Télécharger</p>
-    </div>
-
-    <!-- 4. FOOTER -->
-    <footer>
-        <p>© 2026 FB Downloader | Politique de confidentialité | Contact</p>
-    </footer>
+<footer><p>© 2026 Téléchargeur FB | Politique | Contact</p></footer>
 
 <script>
-    // FONCTION BOUTON SOUTIEN
-    function ouvrirPub() {
-        window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
-        alert("Merci pour ton soutien ❤️");
-    }
+function ouvrirPub(){
+window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d","_blank");
+alert("Merci pour ton soutien ❤️");
+}
 
-    // FONCTION TÉLÉCHARGER + PUB
-    async function downloadVideo() {
-        const url = document.getElementById("url").value;
-        const resultDiv = document.getElementById("result");
-
-        if(!url.trim() || !url.includes("facebook.com")) {
-            resultDiv.innerHTML = "❌ Colle un vrai lien Facebook svp";
-            return;
-        }
-
-        // 1. ON OUVRE LA PUB EN PREMIER
-        window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
-
-        resultDiv.innerHTML = "⏳ Pub ouverte... Prépare le téléchargement";
-
-        // 2. 1 SECONDE APRÈS ON LANCE COBALT API
-        setTimeout(async () => {
-            try {
-                const response = await fetch("https://api.cobalt.tools/api/json", {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify({url: url})
-                });
-                const data = await response.json();
-                
-                if(data.url) {
-                    window.open(data.url, "_blank");
-                    resultDiv.innerHTML = "✅ Téléchargement lancé !";
-                } else {
-                    resultDiv.innerHTML = "❌ Lien invalide ou vidéo privée";
-                }
-            } catch(e) {
-                resultDiv.innerHTML = "❌ Erreur. Réessaye";
-            }
-        }, 1000);
-    }
+async function telechargerVideo(){
+const URL=document.getElementById("url").value;
+const resultatDiv=document.getElementById("resultat");
+if(!URL.trim()||!URL.includes("facebook.com")){
+resultatDiv.innerHTML="❌ Colle un vrai lien Facebook svp";return;}
+window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d","_blank");
+resultatDiv.innerHTML="⏳ Pub ouverte... Prépare le téléchargement";
+setTimeout(async()=>{
+try{
+const response=await fetch("https://api.cobalt.tools/api/json",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({url:URL})
+});
+const data=await response.json();
+if(data.url){
+window.open(data.url,"_blank");
+resultatDiv.innerHTML="✅ Téléchargement lancé !";
+}else{
+resultatDiv.innerHTML="❌ Lien invalide ou vidéo privée";
+}
+}catch(e){
+resultatDiv.innerHTML="❌ Erreur. Réessayes";
+}
+},1000);
+}
 </script>
 </body>
 </html>
