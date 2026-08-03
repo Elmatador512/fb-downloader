@@ -1,134 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Video Downloader - FB, TikTok, IG, YT</title>
-    <style>
-        body{
-    font-family: 'Segoe UI', Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    margin: 0;
-}
-.hero{
-    background: white;
-    padding: 30px 20px;
-    border-radius: 20px;
-    max-width: 500px;
-    margin: 50px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-input{
-    width:90%;
-    padding:14px;
-    margin:10px 0;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    font-size: 15px;
-}
-input:focus{border-color: #1877f2; outline: none;}
-button{
-    background: #1877f2;
-    color: white;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 90%;
-    font-size: 16px;
-    transition: 0.3s;
-}
-button:hover{background: #0d65d9; transform: translateY(-2px);}
-.btn-soutien{background: linear-gradient(90deg, #FF7732, #FF4E00);}
-.how-it-works{text-align: left; margin-top: 30px; background: #f8f9fa; padding: 15px; border-radius: 12px;}
-footer{margin-top: 30px; font-size: 12px; color: white;}
-    </style>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video Downloader Pro</title>
+
+<meta name="description" content="Téléchargez vos vidéos en ligne rapidement.">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-    <!-- 1. HERO -->
-    <div class="hero">
-        <h1>Video Downloader pro</h1>
-        <p>Télécharge n'importe quelle vidéo FB, TikTok, Insta, YT en MP4 HD gratuitement</p>
-        <input type="text" id="url" placeholder="Colle le lien Facebook ici" />
-        <button onclick="downloadVideo()">Télécharger</button>
+<div class="container">
 
-        <!-- BOUTON SOUTIEN -->
-        <button class="btn-soutien" onclick="ouvrirPub()">🔥 Regarder une vidéo pour me soutenir</button>
-<div id="loader" style="display:none;">⏳ Téléchargement en cours...</div>
-    </div>
+<div class="card">
 
-    <!-- 2. COMMENT ÇA MARCHE -->
-    <div class="how-it-works">
-        <h2>Comment télécharger ?</h2>
-        <p>1. Copiez le lien de la vidéo</p>
-        <p>2. Collez-le ici</p>
-        <p>3. Cliquez sur Télécharger</p>
-    </div>
+<h1>🎬 Video Downloader Pro</h1>
 
-    <!-- 4. FOOTER -->
-    <footer>
-        <p>© 2026 FB Downloader | Politique de confidentialité | Contact</p>
-    </footer>
+<p>
+Télécharge tes vidéos Facebook, TikTok, Instagram et YouTube.
+</p>
 
-<script>
-    // FONCTION BOUTON SOUTIEN
-    function ouvrirPub() {
-        window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
-        alert("Merci pour ton soutien ❤️");
-    }
 
-    // FONCTION TÉLÉCHARGER + PUB
-    async function downloadVideo() {
-        const url = document.getElementById("url").value;
-        const resultDiv = document.getElementById("result");
+<input 
+id="url"
+type="text"
+placeholder="Colle le lien de la vidéo ici">
 
-        if(!url.trim()) {
-            resultDiv.innerHTML = "❌ Collez un vrai lien svp";
-            return;
-        }
 
-        // 1. ON OUVRE LA PUB EN PREMIER
-        window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
+<button id="downloadBtn">
+Télécharger
+</button>
 
-        resultDiv.innerHTML = "⏳ Pub ouverte... Prépare le téléchargement";
 
-        // 2. 1 SECONDE APRÈS ON LANCE COBALT API
-        setTimeout(async () => {
-            try {
-                const response = await fetch("https://api.cobalt.tools/api/json", {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify({url: url})
-                });
-                const data = await response.json();
-                
-                 let downloadUrl = null;
+<div id="loader">
+⏳ Traitement en cours...
+</div>
 
- // Cas 1: URL directe
- if(data.url) {
- downloadUrl = data.url;
- }
- // Cas 2: Plusieurs qualités - on prend la meilleure
- else if(data.picker && data.picker.length > 0) {
- const best = data.picker.sort((a,b) => (b.quality || 0) - (a.quality || 0))[0];
- downloadUrl = best.url;
- }
 
- if(downloadUrl) {
- resultDiv.innerHTML = `<a href="${downloadUrl}" target="_blank" download style="color:#1877f2; font-weight:bold; font-size:16px;">✅ Clique ici pour télécharger la vidéo HD</a>`;
- } else {
- resultDiv.innerHTML = "❌ Lien invalide ou vidéo privée";
- }
-            } catch(e) {
-                resultDiv.innerHTML = "❌ Erreur. Réessaye";
-            }
-        }, 1000);
-    }
-</script>
+<div id="result"></div>
+
+
+</div>
+
+
+<div class="ad-container">
+
+<!-- COLLE ICI TON CODE PUBLICITAIRE ADSTERRA -->
+
+</div>
+
+
+<div class="info">
+
+<h2>Comment ça marche ?</h2>
+
+<p>1. Copie le lien de ta vidéo.</p>
+
+<p>2. Colle-le dans la barre.</p>
+
+<p>3. Clique sur télécharger.</p>
+
+</div>
+
+
+<footer>
+
+<a href="privacy.html">
+Confidentialité
+</a>
+
+<a href="terms.html">
+Conditions
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+
+<p>
+© 2026 Video Downloader Pro
+</p>
+
+</footer>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
