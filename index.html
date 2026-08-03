@@ -1,92 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Facebook Video Downloader</title>
-  <meta name="description" content="Télécharge n'importe quelle vidéo Facebook en MP4 HD gratuitement">
-  
-  <!-- 1. CODE VERIFICATION MONETAG -->
-  <meta name="monetag" content="81573de6daac3507b263b2d6fa9018d8">
-
-  <style>
-    body { font-family: Arial; text-align: center; background: #f0f2f5; }
-    .hero { background: white; padding: 20px; margin: 20px; border-radius: 10px; }
-    input { width: 80%; padding: 10px; margin: 10px; }
-    button { background: #1877f2; color: white; padding: 10px 20px; border: none; border-radius: 5px; }
-    .ad-container { margin: 20px auto; }
-    .btn-soutien { 
-    background: #FF5722; 
-    color: white; 
-    padding: 12px 20px; 
-    border: none; 
-    border-radius: 8px; 
-    margin-top: 10px;
-    font-weight: bold;
-    cursor: pointer;
-          }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Video Downloader</title>
+    <style>
+        body{font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #f0f2f5;}
+        .hero{background: white; padding: 20px; border-radius: 12px; max-width: 500px; margin: auto;}
+        input{width:80%; padding:10px; margin:10px; border: 1px solid #ccc; border-radius: 8px;}
+        button{background: #1877f2; color: white; padding: 12px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;}
+        .btn-soutien{background: #FF7732; margin-top: 10px; display: block; width: 80%; margin: 10px auto;}
+        .how-it-works{text-align: left; margin-top: 20px;}
+        footer{margin-top: 20px; font-size: 12px; color: #888;}
+    </style>
 </head>
 <body>
 
-  <!-- 1. HERO - En haut de page -->
-  <div class="hero">
-    <h1>Facebook Video Downloader</h1>
-    <p>Télécharge n'importe quelle vidéo Facebook en MP4 HD gratuitement</p>
-    <input type="text" id="url" placeholder="Colle le lien Facebook ici" style="width:80%; padding:10px; margin:10px;">
-<button onclick="downloadVideo()">Télécharger</button>
+    <!-- 1. HERO -->
+    <div class="hero">
+        <h1>Facebook Downloader</h1>
+        <p>Télécharge n'importe quelle vidéo Facebook en MP4 HD gratuitement</p>
+        <input type="text" id="url" placeholder="Colle le lien Facebook ici" />
+        <button onclick="downloadVideo()">Télécharger</button>
 
-<!-- NOUVEAU BOUTON SOUTIEN -->
-<button class="btn-soutien" onclick="ouvrirPub()">🔥 Regarder une vidéo pour me soutenir</button>
-<div id="result"></div>
-  </div>
+        <!-- BOUTON SOUTIEN -->
+        <button class="btn-soutien" onclick="ouvrirPub()">🔥 Regarder une vidéo pour me soutenir</button>
+        <div id="result"></div>
+    </div>
 
-  <!-- 2. PUB BANNIÈRE 300x250 ICI -->
-  <div class="ad-container">
+    <!-- 2. COMMENT ÇA MARCHE -->
+    <div class="how-it-works">
+        <h2>Comment télécharger ?</h2>
+        <p>1. Copiez le lien de la vidéo Facebook</p>
+        <p>2. Collez-le ici</p>
+        <p>3. Cliquez sur Télécharger</p>
+    </div>
 
-  <!-- 3. COMMENT ÇA MARCHE -->
-  <div class="how-it-works">
-    <h2>Comment télécharger ?</h2>
-    <p>1. Copiez le lien de la vidéo Facebook</p>
-    <p>2. Collez-le ici</p>
-    <p>3. Cliquez sur Télécharger</p>
-  </div>
+    <!-- 4. FOOTER -->
+    <footer>
+        <p>© 2026 FB Downloader | Politique de confidentialité | Contact</p>
+    </footer>
 
-  <!-- 4. FOOTER -->
-  <footer>
-    <p>© 2026 FB Downloader | Politique de confidentialité | Contact</p>
-  </footer>
-<script src="https://pl30647807.effectivecpmnetwork.com/99/d4/d8/99d4d80f50cdc1d42f1d538feefeaa71.js"></script>
-  <script src="https://pl30647807.effectivecpmnetwork.com/99/d4/d8/99d4d80f50cdc1d42f1d538feefeaa71.js"></script>
-  <script>
-function downloadVideo() {
-  // FONCTION POUR LE BOUTON SOUTIEN
-function ouvrirPub() {
-    // OUVRE LA PUB DANS UN NOUVEL ONGLET
-    var win = window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank", "noopener,noreferrer");
-    
-    if(win){
+<script>
+    // FONCTION BOUTON SOUTIEN
+    function ouvrirPub() {
+        window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
         alert("Merci pour ton soutien ❤️");
-    } else {
-        alert("Désactive le bloqueur de pop-up et réessaye ❤️");
-    }
-}
-    // 1. Récupère le lien
-    let url = document.getElementById('url1').value;
-    
-    if(url.trim() == "" || !url.includes("facebook.com")) {
-        alert("Colle un vrai lien Facebook !");
-        return;
     }
 
-    // 2. OUVRE D'ABORD LA PUB - Au clic
-    window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
+    // FONCTION TÉLÉCHARGER + PUB
+    async function downloadVideo() {
+        const url = document.getElementById("url").value;
+        const resultDiv = document.getElementById("result");
 
-    // 3. PUIS 1 seconde après on ouvre cobalt
-    setTimeout(function() {
-        window.open("https://ssdddit.tools/?url=" + encodeURIComponent(url), "_blank");
-    }, 1000);
-}
-    </script>
+        if(!url.trim() || !url.includes("facebook.com")) {
+            resultDiv.innerHTML = "❌ Colle un vrai lien Facebook svp";
+            return;
+        }
+
+        // 1. ON OUVRE LA PUB EN PREMIER
+        window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
+
+        resultDiv.innerHTML = "⏳ Pub ouverte... Prépare le téléchargement";
+
+        // 2. 1 SECONDE APRÈS ON LANCE COBALT API
+        setTimeout(async () => {
+            try {
+                const response = await fetch("https://api.cobalt.tools/api/json", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({url: url})
+                });
+                const data = await response.json();
+                
+                if(data.url) {
+                    window.open(data.url, "_blank");
+                    resultDiv.innerHTML = "✅ Téléchargement lancé !";
+                } else {
+                    resultDiv.innerHTML = "❌ Lien invalide ou vidéo privée";
+                }
+            } catch(e) {
+                resultDiv.innerHTML = "❌ Erreur. Réessaye";
+            }
+        }, 1000);
+    }
+</script>
 </body>
 </html>
