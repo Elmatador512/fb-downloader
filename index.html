@@ -65,10 +65,14 @@
 function downloadVideo() {
   // FONCTION POUR LE BOUTON SOUTIEN
 function ouvrirPub() {
-    // OUVRE LA PUB = TU GAGNES DE L'ARGENT
-    window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank");
+    // OUVRE LA PUB DANS UN NOUVEL ONGLET
+    var win = window.open("https://www.profitableratecpm.com/56e69b29fa7bf8f07ffca0d2d2453c9d", "_blank", "noopener,noreferrer");
     
-    alert("Merci pour ton soutien ❤️");
+    if(win){
+        alert("Merci pour ton soutien ❤️");
+    } else {
+        alert("Désactive le bloqueur de pop-up et réessaye ❤️");
+    }
 }
     // 1. Récupère le lien
     let url = document.getElementById('url1').value;
