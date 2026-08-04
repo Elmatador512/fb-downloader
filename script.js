@@ -1,3 +1,13 @@
+const progressBar = document.getElementById("progress-bar");
+loader.style.display="block";
+button.disabled=true;
+progressBar.style.width="20%";
+
+setTimeout(()=>{
+
+progressBar.style.width="60%";
+
+},500);
 const urlInput = document.getElementById("url");
 const button = document.getElementById("downloadBtn");
 const loader = document.getElementById("loader");
@@ -33,7 +43,7 @@ button.addEventListener("click", async function(){
 
     }
 
-
+progressBar.style.width="100%";
     loader.style.display="block";
     button.disabled=true;
 
