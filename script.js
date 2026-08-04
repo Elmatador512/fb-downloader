@@ -1,17 +1,8 @@
-const progressBar = document.getElementById("progress-bar");
-loader.style.display="block";
-button.disabled=true;
-progressBar.style.width="20%";
-
-setTimeout(()=>{
-
-progressBar.style.width="60%";
-
-},500);
 const urlInput = document.getElementById("url");
 const button = document.getElementById("downloadBtn");
 const loader = document.getElementById("loader");
 const result = document.getElementById("result");
+const progressBar = document.getElementById("progress-bar");
 
 
 button.addEventListener("click", async function(){
@@ -43,9 +34,23 @@ button.addEventListener("click", async function(){
 
     }
 
-progressBar.style.width="100%";
-    loader.style.display="block";
-    button.disabled=true;
+
+    loader.style.display = "block";
+    button.disabled = true;
+
+
+    if(progressBar){
+
+        progressBar.style.width = "20%";
+
+        setTimeout(()=>{
+
+            progressBar.style.width = "60%";
+
+        },500);
+
+    }
+
 
 
     try{
@@ -77,14 +82,22 @@ progressBar.style.width="100%";
 
         if(data.url){
 
-            videoUrl=data.url;
+            videoUrl = data.url;
 
         }
 
 
         else if(data.picker && data.picker.length > 0){
 
-            videoUrl=data.picker[0].url;
+            videoUrl = data.picker[0].url;
+
+        }
+
+
+
+        if(progressBar){
+
+            progressBar.style.width = "100%";
 
         }
 
@@ -93,7 +106,7 @@ progressBar.style.width="100%";
         if(videoUrl){
 
 
-            result.innerHTML=`
+            result.innerHTML = `
 
             <p style="color:green;font-weight:bold;">
             ✅ Vidéo prête
@@ -101,7 +114,7 @@ progressBar.style.width="100%";
 
             <br>
 
-            <a href="${videoUrl}" 
+            <a href="${videoUrl}"
             target="_blank"
             style="
             color:#1877f2;
@@ -117,13 +130,10 @@ progressBar.style.width="100%";
             `;
 
 
-        }
+        }else{
 
 
-        else{
-
-
-            result.innerHTML=`
+            result.innerHTML = `
 
             <p style="color:red;font-weight:bold;">
             ❌ Vidéo introuvable.
@@ -136,13 +146,10 @@ progressBar.style.width="100%";
 
 
 
-    }
+    }catch(error){
 
 
-    catch(error){
-
-
-        result.innerHTML=`
+        result.innerHTML = `
 
         <p style="color:red;font-weight:bold;">
         ❌ Erreur du serveur.
@@ -159,9 +166,8 @@ progressBar.style.width="100%";
 
 
 
-    loader.style.display="none";
-    button.disabled=false;
-
+    loader.style.display = "none";
+    button.disabled = false;
 
 
 });
