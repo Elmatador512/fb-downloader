@@ -57,7 +57,7 @@ button.addEventListener("click", async function(){
 
 
         const response = await fetch(
-            "https://api.cobalt.tools/api/json",
+            "/download",
             {
 
             method:"POST",
