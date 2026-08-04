@@ -57,7 +57,7 @@ button.addEventListener("click", async function(){
 
 
         const response = await fetch(
-            "/download",
+    "https://fb-downloader-zpwk.onrender.com/download",
             {
 
             method:"POST",
