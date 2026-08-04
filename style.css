@@ -2,8 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    padding-top:90px;
+    font-family:'Segoe UI',Arial,sans-serif;
 }
 
 
@@ -11,16 +10,18 @@ body{
 
     min-height:100vh;
 
-    background:linear-gradient(135deg,#667eea,#764ba2);
+    background:
+    linear-gradient(135deg,#667eea,#764ba2);
 
-    padding:20px;
+    padding:70px 15px 20px;
 
 }
 
 
+
 .container{
 
-    max-width:650px;
+    max-width:600px;
 
     margin:auto;
 
@@ -28,19 +29,46 @@ body{
 
 
 
+/* Carte principale */
+
 .card{
 
-    background:white;
+    background:rgba(255,255,255,0.95);
 
-    padding:20px;
+    backdrop-filter:blur(10px);
 
-    margin-top:30px;
+    padding:22px;
 
-    border-radius:20px;
+    border-radius:25px;
 
     text-align:center;
 
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+    animation:apparition .7s ease;
+
+}
+
+
+
+@keyframes apparition{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 
@@ -48,7 +76,21 @@ body{
 
 h1{
 
-    color:#1877f2;
+    font-size:30px;
+
+    color:#6d28d9;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.subtitle{
+
+    color:#555;
+
+    font-size:16px;
 
     margin-bottom:15px;
 
@@ -56,29 +98,95 @@ h1{
 
 
 
-.card p{
+/* Plateformes */
 
-    color:#555;
 
-    margin-bottom:25px;
+.platforms{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin:15px 0;
 
 }
 
+
+
+.platforms span{
+
+    background:#f1f5f9;
+
+    padding:7px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Avantages */
+
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:15px;
+
+}
+
+
+.features span{
+
+    background:#ede9fe;
+
+    color:#6d28d9;
+
+    padding:7px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* Champ lien */
 
 
 input{
 
     width:100%;
 
-    padding:15px;
+    padding:14px;
 
-    border-radius:12px;
+    border-radius:15px;
 
     border:2px solid #ddd;
 
-    font-size:16px;
+    font-size:15px;
 
     outline:none;
+
+    margin-bottom:12px;
 
 }
 
@@ -86,27 +194,29 @@ input{
 
 input:focus{
 
-    border-color:#1877f2;
+    border-color:#7c3aed;
 
 }
 
+
+
+/* Bouton */
 
 
 button{
 
     width:100%;
 
-    margin-top:15px;
-
     padding:15px;
-
-    background:#1877f2;
-
-    color:white;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:15px;
+
+    background:
+    linear-gradient(90deg,#7c3aed,#2563eb);
+
+    color:white;
 
     font-size:17px;
 
@@ -114,13 +224,17 @@ button{
 
     cursor:pointer;
 
+    transition:.3s;
+
 }
 
 
 
 button:hover{
 
-    background:#0d65d9;
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(124,58,237,.4);
 
 }
 
@@ -128,19 +242,22 @@ button:hover{
 
 button:disabled{
 
-    background:#999;
+    opacity:.6;
 
 }
 
+
+
+/* Chargement */
 
 
 #loader{
 
     display:none;
 
-    margin-top:20px;
+    margin-top:15px;
 
-    color:#1877f2;
+    color:#2563eb;
 
     font-weight:bold;
 
@@ -148,25 +265,31 @@ button:disabled{
 
 
 
+/* Résultat */
+
+
 #result{
 
-    margin-top:20px;
+    margin-top:15px;
 
-    padding:15px;
+    padding:12px;
 
-    border-radius:10px;
+    border-radius:12px;
 
 }
 
+
+
+/* Publicité */
 
 
 .ad-container{
 
     background:white;
 
-    margin-top:20px;
+    margin:15px auto;
 
-    padding:20px;
+    padding:10px;
 
     border-radius:15px;
 
@@ -176,15 +299,20 @@ button:disabled{
 
 
 
+/* Comment ça marche */
+
+
 .info{
 
     background:white;
 
-    margin-top:20px;
+    padding:18px;
 
-    padding:20px;
+    margin-top:15px;
 
-    border-radius:15px;
+    border-radius:18px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
 
 }
 
@@ -192,7 +320,9 @@ button:disabled{
 
 .info h2{
 
-    margin-bottom:15px;
+    color:#6d28d9;
+
+    margin-bottom:10px;
 
 }
 
@@ -200,10 +330,15 @@ button:disabled{
 
 .info p{
 
-    margin:10px 0;
+    margin:5px 0;
+
+    font-size:15px;
 
 }
 
+
+
+/* Footer */
 
 
 footer{
@@ -212,9 +347,9 @@ footer{
 
     color:white;
 
-    margin-top:30px;
+    margin-top:20px;
 
-    font-size:14px;
+    font-size:13px;
 
 }
 
@@ -224,7 +359,7 @@ footer a{
 
     color:white;
 
-    margin:0 8px;
+    margin:0 5px;
 
     text-decoration:none;
 
@@ -232,92 +367,22 @@ footer a{
 
 
 
-footer a:hover{
-
-    text-decoration:underline;
-
-}
-
-
-
 /* Mobile */
 
-@media(max-width:500px){
 
-    .card{
+@media(max-width:450px){
 
-        padding:20px;
+h1{
 
-    }
+font-size:25px;
 
-
-    h1{
-
-        font-size:25px;
-
-    }
-
-  }
-.subtitle{
-font-size:18px;
-color:#555;
-margin-bottom:20px;
 }
 
-.platforms{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:6px;
-margin:12px 0;
-}
-
-.platforms span{
-background:#1877f2;
-color:white;
-padding:8px 15px;
-border-radius:20px;
-font-size:14px;
-font-weight:bold;
-}
-
-.features{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:10px;
-margin-bottom:25px;
-}
-
-.features span{
-background:#f3f3f3;
-padding:8px 15px;
-border-radius:20px;
-font-size:14px;
-font-weight:bold;
-color:#333;
-}
-
-#downloadBtn{
-font-size:18px;
-transition:.3s;
-}
-
-#downloadBtn:hover{
-transform:scale(1.03);
-}
 
 .card{
-animation:fadeUp .8s ease;
+
+padding:18px;
+
 }
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+    }
