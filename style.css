@@ -258,3 +258,66 @@ footer a:hover{
     }
 
   }
+.subtitle{
+font-size:18px;
+color:#555;
+margin-bottom:20px;
+}
+
+.platforms{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin:20px 0;
+}
+
+.platforms span{
+background:#1877f2;
+color:white;
+padding:8px 15px;
+border-radius:20px;
+font-size:14px;
+font-weight:bold;
+}
+
+.features{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:25px;
+}
+
+.features span{
+background:#f3f3f3;
+padding:8px 15px;
+border-radius:20px;
+font-size:14px;
+font-weight:bold;
+color:#333;
+}
+
+#downloadBtn{
+font-size:18px;
+transition:.3s;
+}
+
+#downloadBtn:hover{
+transform:scale(1.03);
+}
+
+.card{
+animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
