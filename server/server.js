@@ -33,7 +33,9 @@ app.post("/download", async (req, res) => {
 
     const data = await response.json();
 
-    res.json(data);
+console.log(data);
+
+res.json(data);
 
   } catch (error) {
     console.log(error);
