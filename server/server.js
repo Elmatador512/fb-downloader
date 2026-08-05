@@ -1,11 +1,38 @@
-    const express = require('express');
-    const app = express();
-    const port = 3000;
+const express = require("express");
+const cors = require("cors");
 
-    app.get('/', (req, res) => {
-      res.send('Serveur Downloader OK');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Serveur Downloader OK");
+});
+
+app.post("/download", async (req, res) => {
+  const { url } = req.body;
+
+  try {
+    const response = await fetch("https://api.cobalt.tools/api/json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ url })
     });
 
-    app.listen(port, () => {
-      console.log(`Serveur lancé`);
+    const data = await response.json();
+    res.json(data);
+
+  } catch (error) {
+    res.status(500).json({
+      error: "Erreur du serveur"
     });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Serveur lancé sur le port ${port}`);
+});
