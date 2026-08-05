@@ -33,7 +33,7 @@ app.post("/download", async (req, res) => {
 
     const data = await response.json();
 
-console.log(data);
+console.log("REPONSE COBALT :", JSON.stringify(data));
 
 res.json(data);
 
