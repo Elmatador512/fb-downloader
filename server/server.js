@@ -56,16 +56,6 @@ app.post("/download", async (req, res) => {
   }
 });
 
-  } catch (error) {
-    console.log(error);
-
-    res.status(500).json({
-      error: "Erreur du serveur",
-      details: error.message
-    });
-  }
-});
-
 app.listen(port, () => {
   console.log(`Serveur lancé sur le port ${port}`);
 });
