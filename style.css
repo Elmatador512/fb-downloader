@@ -438,12 +438,11 @@ transition:.4s;
 }
 
 .url-box input {
-    flex: 1;
+    flex: 2;
 }
 
 #clearBtn {
-    padding: 12px 15px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 14px;
+    }
