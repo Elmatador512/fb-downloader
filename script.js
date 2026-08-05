@@ -171,3 +171,9 @@ button.addEventListener("click", async function(){
 
 
 });
+const clearBtn = document.getElementById("clearBtn");
+
+clearBtn.addEventListener("click", () => {
+    urlInput.value = "";
+    result.innerHTML = "";
+});
