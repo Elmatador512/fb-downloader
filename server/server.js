@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const fetch = require("node-fetch");
 const app = express();
+app.get("/", (req, res) => {
+  res.send("Serveur Downloader OK ✅");
+});
 const port = process.env.PORT || 3000;
 
 app.use(cors());
