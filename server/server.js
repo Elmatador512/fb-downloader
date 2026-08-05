@@ -10,10 +10,6 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Serveur Downloader OK");
-});
-
 app.post("/download", async (req, res) => {
   const { url } = req.body;
 
