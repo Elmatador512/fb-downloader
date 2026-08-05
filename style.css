@@ -431,3 +431,19 @@ border-radius:20px;
 transition:.4s;
 
 }
+.url-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.url-box input {
+    flex: 1;
+}
+
+#clearBtn {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
